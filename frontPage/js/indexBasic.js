@@ -12,4 +12,8 @@ $(document).ready(function(){
     $("#startTime").val(hour+":"+min);
     $("#finishTime").val(hour+":");
 
+    //点击删除该项按钮
+    $(".deleteWorkActionItem").click(function(){
+        $(this).parent().parent().remove();
+    });
   });

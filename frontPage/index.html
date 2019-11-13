@@ -76,33 +76,62 @@
                                     <option value="">智慧包装项目</option>
                                 </select>
                             </div>
-                            <!---->
-                            <label for="finishTime" class="col-sm-2 control-label">结束时间</label>
-                            <div class="col-sm-4">
-                                <input type="text" class="form-control" id="finishTime">
+                        </div>
+
+                        <!--工作记录添加-->
+                        <div class="form-group">
+                            <div class="col-sm-offset-1 col-sm-4">
+                                <span id="addWorkActionItem" class="btn btn-primary">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                    <span>添加一条记录</span>
+                                </span>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                        
+                        <!--初始工作记录-->
+                        <div class="workActionItem form-group">
+                            <!--工作记录类型-->
+                            <div class="col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-sm-2 col-md-2 col-lg-2">    
+                                <select class="workActionType form-control">
+                                    <option value="">测试</option>
+                                </select> 
+                            </div>
+                            <!--工作记录描述-->
+                            <div class="col-sm-5 col-md-5 col-lg-5">
+                                <input type="text" class="workActionDescription form-control" placeholder="工作描述">
+                            </div>
+                            <!--工作记录对象-->
+                            <div class="col-sm-2 col-md-2 col-lg-2">
+                                <select class="workActionObject form-control">
+                                    <option value="">测试</option>
+                                </select>
+                            </div>
+                            <!--工作记录删除按钮-->
+                            <div class="col-sm-2 col-md-2 col-lg-2">
+                                <button class="deleteWorkActionItem btn btn-danger">删除该项</button>
                             </div>
                         </div>
+                        <!--工作记录附加起始点-->
+                        <div id="workActionItemHead"></div>
+                        
+                        <!--工作记录生成附加起始点-->
+                        <div id="workLogHead"></div>
+
                         <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                            <div class="checkbox">
-                                <label>
-                                <input type="checkbox"> Remember me
-                                </label>
+                            <!--生成日志-->
+                            <div class="col-sm-offset-9 col-sm-3">
+                                <!--生成日志-->
+                                <button id="generate" class="btn btn-info">生成日志</button>
+                                <!--保存日志-->
+                                <button type="submit" class="btn btn-success">保存日志</button>
                             </div>
-                            </div>
+                            <!--保存日志-->
+                            <!-- <div class="col-sm-3">
+                                <button type="submit" class="btn btn-success">保存日志</button>
+                            </div> -->
                         </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default">Sign in</button>
-                            </div>
-                        </div>
+
                     </form>
                 </div>
               </div>
@@ -115,5 +144,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
     <!--自写js-->
     <script src="./js/indexBasic.js"></script>
+    <script src="./js/indexAddWorkActionItem.js"></script>
+    <script src="./js/indexWorkLogGenerator.js"></script>
   </body>
 </html>
