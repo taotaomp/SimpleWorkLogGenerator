@@ -11,6 +11,7 @@
     http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
 
     <context:annotation-config/>
+    <context:component-scan base-package="cn.PApudding.SimpleWorkLogGenerator"></context:component-scan>
 
     <!-- 事务管理器，依赖于数据源 -->
     <!--<bean id="txManager"

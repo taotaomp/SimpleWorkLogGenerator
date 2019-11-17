@@ -1,14 +1,15 @@
 package cn.PApudding.SimpleWorkLogGenerator.pojo;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * 工作类型
  */
-public class WorkType {
+public class WorkType implements Serializable {
     private int workTypeId;
     private String workTypeName;
-    private List<WorkActionType> workActionTypeList;
+//    private List<WorkActionType> workActionTypeList;
 
     public WorkType() {
     }
@@ -34,11 +35,11 @@ public class WorkType {
         this.workTypeName = workTypeName;
     }
 
-    public List<WorkActionType> getWorkActionTypeList() {
-        return workActionTypeList;
-    }
-
-    public void setWorkActionTypeList(List<WorkActionType> workActionTypeList) {
-        this.workActionTypeList = workActionTypeList;
-    }
+//    public List<WorkActionType> getWorkActionTypeList() {
+//        return workActionTypeList;
+//    }
+//
+//    public void setWorkActionTypeList(List<WorkActionType> workActionTypeList) {
+//        this.workActionTypeList = workActionTypeList;
+//    }
 }
