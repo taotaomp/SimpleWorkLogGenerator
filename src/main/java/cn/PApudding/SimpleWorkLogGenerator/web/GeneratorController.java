@@ -1,6 +1,9 @@
 package cn.PApudding.SimpleWorkLogGenerator.web;
 
+import cn.PApudding.SimpleWorkLogGenerator.pojo.WorkActionObject;
+import cn.PApudding.SimpleWorkLogGenerator.pojo.WorkActionType;
 import cn.PApudding.SimpleWorkLogGenerator.pojo.WorkType;
+import cn.PApudding.SimpleWorkLogGenerator.pojo.WorkUnit;
 import cn.PApudding.SimpleWorkLogGenerator.service.GeneratorService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -42,5 +45,35 @@ public class GeneratorController {
     @RequestMapping(value = "/workType/{id}",method = RequestMethod.GET)
     public WorkType getWorkType(@PathVariable Integer id){
         return generatorService.getWorkType(id);
+    }
+
+    @RequestMapping(value = "/workUnits",method = RequestMethod.GET)
+    public Object workUnitList(@RequestParam(value = "callback",required = false)String callback){
+        List<WorkUnit> workUnits = generatorService.listWorkUnit();
+        if (callback==null){
+            return workUnits;
+        }
+        JSONPObject jsonpObject = new JSONPObject(callback,workUnits);
+        return jsonpObject;
+    }
+
+    @RequestMapping(value = "/workActionObjects",method = RequestMethod.GET)
+    public Object workActionObjectList(@RequestParam(value = "callback",required = false) String callback){
+        List<WorkActionObject> workActionObjects = generatorService.listWorkActionObject();
+        if (callback==null){
+            return workActionObjects;
+        }
+        JSONPObject jsonpObject = new JSONPObject(callback,workActionObjects);
+        return jsonpObject;
+    }
+
+    @RequestMapping(value = "/workActionTypes",method = RequestMethod.GET)
+    public Object workActionTypeList(@RequestParam(value = "callback",required = false) String callback){
+        List<WorkActionType> workActionTypes = generatorService.listWorkActionType();
+        if (callback==null){
+            return workActionTypes;
+        }
+        JSONPObject jsonpObject = new JSONPObject(callback,workActionTypes);
+        return jsonpObject;
     }
 }

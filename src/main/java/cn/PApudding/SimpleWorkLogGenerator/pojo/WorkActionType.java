@@ -6,15 +6,14 @@ package cn.PApudding.SimpleWorkLogGenerator.pojo;
 public class WorkActionType {
     private int workActionTypeId;
     private String workActionTypeName;
-    private WorkActionObject workActionObject;
+
 
     public WorkActionType() {
     }
 
-    public WorkActionType(int workActionTypeId, String workActionTypeName, WorkActionObject workActionObject) {
+    public WorkActionType(int workActionTypeId, String workActionTypeName) {
         this.workActionTypeId = workActionTypeId;
         this.workActionTypeName = workActionTypeName;
-        this.workActionObject = workActionObject;
     }
 
     public int getWorkActionTypeId() {
@@ -33,11 +32,4 @@ public class WorkActionType {
         this.workActionTypeName = workActionTypeName;
     }
 
-    public WorkActionObject getWorkActionObject() {
-        return workActionObject;
-    }
-
-    public void setWorkActionObject(WorkActionObject workActionObject) {
-        this.workActionObject = workActionObject;
-    }
 }

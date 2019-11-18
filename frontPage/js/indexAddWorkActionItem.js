@@ -10,8 +10,16 @@ $(document).ready(function(){
         newWorkActionType.attr("class","col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-sm-2 col-md-2 col-lg-2");
         var newSelectT = $("<select></select>");
         newSelectT.attr("class","workActionType form-control");
-        var newOptionsT = [];
-        var newOptionT = $("<option></option>");
+        $.getJSON("http://localhost:8080/SimpleWorkLogGenerator_war/workActionTypes?callback=?",function(result){
+        		$.each(result,function(i,filed){
+        		var newOption = $("<option></option>");
+        		newOption.attr("value",filed.workActionTypeId);
+        		newOption.append(filed.workActionTypeName);
+        		newSelectT.append(newOption);
+        	});
+        });
+		// var newOptionsT = [];
+        // var newOptionT = $("<option></option>");
         //newSelectT.append();
         newWorkActionType.append(newSelectT);
         newWorkActionItem.append(newWorkActionType);
@@ -30,9 +38,17 @@ $(document).ready(function(){
         var newWorkActionObject = $("<div></div>");
         newWorkActionObject.attr("class","col-sm-2 col-md-2 col-lg-2");
         var newSelectO = $("<select></select>");
-        newSelectO.attr("class","workActionType form-control");
-        var newOptionsO = [];
-        var newOptionO = $("<option></option>");
+        newSelectO.attr("class","workActionObject form-control");
+        $.getJSON("http://localhost:8080/SimpleWorkLogGenerator_war/workActionObjects?callback=?",function(result){
+        		$.each(result,function(i,filed){
+        		var newOption = $("<option></option>");
+        		newOption.attr("value",filed.workActionObjectId);
+        		newOption.append(filed.workActionObjectName);
+        		newSelectO.append(newOption);
+        	});
+        });
+		// var newOptionsO = [];
+        // var newOptionO = $("<option></option>");
         //newSelectO.append();
         newWorkActionObject.append(newSelectO);
         newWorkActionItem.append(newWorkActionObject);
