@@ -29,12 +29,8 @@ $(document).ready(function(){
         
 		//遍历所有工作记录项
 		var newTd4 = $("<td></td>");
+		newTd4.attr("id","workLogItems");
         $.each(workActionItemArrays,function(i,n) {
-			alert($(this).find(".workActionType").find("option:selected").text());
-			alert($(this).find(".workActionDescription").val());
-			alert($(this).find(".workActionObject").find("option:selected").text());
-			
-			
 			newTd4.append($(this).find(".workActionType").find("option:selected").text());
 			newTd4.append($(this).find(".workActionDescription").val());
 			newTd4.append($(this).find(".workActionObject").find("option:selected").text());

@@ -18,9 +18,6 @@ $(document).ready(function(){
         		newSelectT.append(newOption);
         	});
         });
-		// var newOptionsT = [];
-        // var newOptionT = $("<option></option>");
-        //newSelectT.append();
         newWorkActionType.append(newSelectT);
         newWorkActionItem.append(newWorkActionType);
   
@@ -47,9 +44,6 @@ $(document).ready(function(){
         		newSelectO.append(newOption);
         	});
         });
-		// var newOptionsO = [];
-        // var newOptionO = $("<option></option>");
-        //newSelectO.append();
         newWorkActionObject.append(newSelectO);
         newWorkActionItem.append(newWorkActionObject);
         

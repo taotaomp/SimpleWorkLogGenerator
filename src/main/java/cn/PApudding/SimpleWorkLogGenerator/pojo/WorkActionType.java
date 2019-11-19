@@ -1,9 +1,11 @@
 package cn.PApudding.SimpleWorkLogGenerator.pojo;
 
+import java.io.Serializable;
+
 /**
  * 工作日志动作类型
  */
-public class WorkActionType {
+public class WorkActionType implements Serializable {
     private int workActionTypeId;
     private String workActionTypeName;
 

@@ -1,9 +1,11 @@
 package cn.PApudding.SimpleWorkLogGenerator.pojo;
 
+import java.io.Serializable;
+
 /**
  * 工作单元
  */
-public class WorkUnit {
+public class WorkUnit implements Serializable {
     private int workUnitId;
     private String workUnitName;
 
