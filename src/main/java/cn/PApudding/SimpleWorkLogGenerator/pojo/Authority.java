@@ -7,15 +7,12 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
-/**
- * 工作日志动作类型
- */
 @Data
+@Accessors(chain = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@Accessors(chain = true)
-public class WorkActionType implements Serializable {
-    private int workActionTypeId;
-    private String workActionTypeName;
-
+public class Authority implements Serializable {
+    private int id;
+    private String token;
+    private int isAuthority;
 }

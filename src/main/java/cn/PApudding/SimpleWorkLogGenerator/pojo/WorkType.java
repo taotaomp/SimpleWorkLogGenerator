@@ -1,45 +1,24 @@
 package cn.PApudding.SimpleWorkLogGenerator.pojo;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
 import java.io.Serializable;
 import java.util.List;
 
 /**
  * 工作类型
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Accessors(chain = true)
 public class WorkType implements Serializable {
     private int workTypeId;
     private String workTypeName;
 //    private List<WorkActionType> workActionTypeList;
 
-    public WorkType() {
-    }
 
-    public WorkType(int workTypeId, String workTypeName) {
-        this.workTypeId = workTypeId;
-        this.workTypeName = workTypeName;
-    }
-
-    public int getWorkTypeId() {
-        return workTypeId;
-    }
-
-    public void setWorkTypeId(int workTypeId) {
-        this.workTypeId = workTypeId;
-    }
-
-    public String getWorkTypeName() {
-        return workTypeName;
-    }
-
-    public void setWorkTypeName(String workTypeName) {
-        this.workTypeName = workTypeName;
-    }
-
-//    public List<WorkActionType> getWorkActionTypeList() {
-//        return workActionTypeList;
-//    }
-//
-//    public void setWorkActionTypeList(List<WorkActionType> workActionTypeList) {
-//        this.workActionTypeList = workActionTypeList;
-//    }
 }

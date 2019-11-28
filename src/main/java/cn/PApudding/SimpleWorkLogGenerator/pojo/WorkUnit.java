@@ -1,35 +1,20 @@
 package cn.PApudding.SimpleWorkLogGenerator.pojo;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
 import java.io.Serializable;
 
 /**
  * 工作单元
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Accessors(chain = true)
 public class WorkUnit implements Serializable {
     private int workUnitId;
     private String workUnitName;
-
-    public WorkUnit() {
-    }
-
-    public WorkUnit(int workUnitId, String workUnitName) {
-        this.workUnitId = workUnitId;
-        this.workUnitName = workUnitName;
-    }
-
-    public int getWorkUnitId() {
-        return workUnitId;
-    }
-
-    public void setWorkUnitId(int workUnitId) {
-        this.workUnitId = workUnitId;
-    }
-
-    public String getWorkUnitName() {
-        return workUnitName;
-    }
-
-    public void setWorkUnitName(String workUnitName) {
-        this.workUnitName = workUnitName;
-    }
 }

@@ -1,5 +1,7 @@
-package cn.PApudding.SimpleWorkLogGenerator.pojo;
+package cn.PApudding.SimpleWorkLogGenerator.vo;
 
+import cn.PApudding.SimpleWorkLogGenerator.pojo.WorkType;
+import cn.PApudding.SimpleWorkLogGenerator.pojo.WorkUnit;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,13 +13,13 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class WorkLog implements Serializable {
+public class WorkLogVo implements Serializable {
     private int workLogId;
     private String currentDate;
-    private WorkType workType;
+    private String workTypeName;
     private String startTime;
     private String finishTime;
-    private WorkUnit workUnit;
+    private String workUnitName;
     private String workLogItems;
 
 
