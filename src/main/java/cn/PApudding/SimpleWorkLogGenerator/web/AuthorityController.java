@@ -13,7 +13,7 @@ public class AuthorityController {
     private AuthorityService authorityService;
 
     @RequestMapping(value = "/authority",method = RequestMethod.POST)
-    public boolean getAuthority(@RequestBody(required = false) String token){
+    public boolean getAuthority(@RequestBody String token){
         if (authorityService.audit(token)){
             authorityService.setAuthorityStatus(1);
             return true;

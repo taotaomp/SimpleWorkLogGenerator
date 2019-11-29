@@ -26,4 +26,9 @@ public class WorkLogServiceImpl implements WorkLogService {
     public List<WorkLogVo> listWorkLog() {
         return workLogDao.findAll();
     }
+
+    @Override
+    public List<WorkLogVo> listWorkLogByCurrentDate(String currentDate) {
+        return workLogDao.findByCurrentDate(currentDate);
+    }
 }

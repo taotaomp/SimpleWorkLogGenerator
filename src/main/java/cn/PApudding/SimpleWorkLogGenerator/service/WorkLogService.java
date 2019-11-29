@@ -11,4 +11,5 @@ import java.util.List;
 public interface WorkLogService {
     boolean postWorkLog(WorkLog workLog);
     List<WorkLogVo> listWorkLog();
+    List<WorkLogVo> listWorkLogByCurrentDate(String current);
 }

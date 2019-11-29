@@ -17,4 +17,7 @@ public interface WorkLogDao {
 
     @Select("SELECT wl.workLogId,wl.currentDate,wt.workTypeId,wt.workTypeName,wl.startTime,wl.finishTime,wu.workUnitId,wu.workUnitName,workLogItems  FROM WorkLog wl,WorkUnit wu,WorkType wt where wl.workUnitId = wu.workUnitId AND wl.workTypeId = wt.workTypeId")
     List<WorkLogVo> findAll();
+
+    @Select("SELECT wl.workLogId,wl.currentDate,wt.workTypeId,wt.workTypeName,wl.startTime,wl.finishTime,wu.workUnitId,wu.workUnitName,workLogItems  FROM WorkLog wl,WorkUnit wu,WorkType wt where wl.workUnitId = wu.workUnitId AND wl.workTypeId = wt.workTypeId AND currentDate=#{currentDate}")
+    List<WorkLogVo> findByCurrentDate(String currentDate);
 }
