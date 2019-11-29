@@ -12,7 +12,7 @@ public class AuthorityServiceImpl implements AuthorityService {
 
     @Override
     public boolean setAuthorityStatus(int isAuthority) {
-        return false;
+        return authorityDao.setAuthorityStatus(isAuthority);
     }
 
     @Override
@@ -21,5 +21,10 @@ public class AuthorityServiceImpl implements AuthorityService {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public int getAuthorityStatus() {
+        return authorityDao.getAuthorityStatus();
     }
 }
