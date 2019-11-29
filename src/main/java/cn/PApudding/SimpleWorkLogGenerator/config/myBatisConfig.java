@@ -25,10 +25,10 @@ public class myBatisConfig {
     @Bean
     public DataSource getDataSource() throws PropertyVetoException {
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
-        dataSource.setJdbcUrl("jdbc:mysql://120.79.18.137:3306/SimpleWorkLogGenerator?useUnicode=true&characterEncoding=utf8");
+        dataSource.setJdbcUrl("jdbc:mysql://:3306/SimpleWorkLogGenerator?useUnicode=true&characterEncoding=utf8");
         dataSource.setUser("root");
         dataSource.setDriverClass("com.mysql.jdbc.Driver");
-        dataSource.setPassword("MYh1000s23t14V");
+        dataSource.setPassword("");
         dataSource.setInitialPoolSize(3);
         dataSource.setMaxPoolSize(10);
         dataSource.setMinPoolSize(3);
