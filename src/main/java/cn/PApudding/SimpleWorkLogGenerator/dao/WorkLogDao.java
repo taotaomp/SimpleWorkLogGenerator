@@ -14,7 +14,6 @@ public interface WorkLogDao {
     @Insert("INSERT INTO WorkLog(currentDate,workTypeId,startTime,finishTime,workUnitId,workLogItems) VALUES (#{currentDate},#{workType.workTypeId},#{startTime},#{finishTime},#{workUnit.workUnitId},#{workLogItems});")
     boolean addWorkLog(WorkLog workLog);
 
-
     @Select("SELECT wl.workLogId,wl.currentDate,wt.workTypeId,wt.workTypeName,wl.startTime,wl.finishTime,wu.workUnitId,wu.workUnitName,workLogItems  FROM WorkLog wl,WorkUnit wu,WorkType wt where wl.workUnitId = wu.workUnitId AND wl.workTypeId = wt.workTypeId order by wl.workLogId")
     List<WorkLogVo> findAll();
 

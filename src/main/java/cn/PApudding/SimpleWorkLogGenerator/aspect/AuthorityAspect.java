@@ -13,10 +13,22 @@ public class AuthorityAspect {
     @Autowired
     private AuthorityDao authorityDao;
 
+    /**
+     * 切点 工作日志服务
+     */
     @Pointcut("execution(* cn.PApudding.SimpleWorkLogGenerator.service.WorkLogService.*(..))")
     private void workLogService(){}
 
-    @Before("workLogService()")
+    /**
+     * 切点 工作日志选项服务
+     */
+    @Pointcut("execution(* cn.PApudding.SimpleWorkLogGenerator.service.WorkLogSelectsService.*(..))")
+    private void workLogSelectsService(){}
+
+    /**
+     * 认证检测
+     */
+    @Before("workLogService(),workLogSelectsService()")
     public void authorityCheck(){
         if(authorityDao.getAuthorityStatus()==0){
             throw new RuntimeException("未授权的访问");
