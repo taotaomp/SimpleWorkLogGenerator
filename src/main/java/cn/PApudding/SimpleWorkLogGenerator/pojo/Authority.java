@@ -7,6 +7,9 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
+/**
+ * 认证对象
+ */
 @Data
 @Accessors(chain = true)
 @AllArgsConstructor

@@ -7,6 +7,9 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
+/**
+ * 工作日志
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
