@@ -28,8 +28,14 @@ public class AuthorityAspect {
     /**
      * 认证检测
      */
-    @Before("workLogService(),workLogSelectsService()")
+    @Before("workLogService()")
     public void authorityCheck(){
+        if(authorityDao.getAuthorityStatus()==0){
+            throw new RuntimeException("未授权的访问");
+        }
+    }
+    @Before("workLogSelectsService()")
+    public void authoritySelectsCheck(){
         if(authorityDao.getAuthorityStatus()==0){
             throw new RuntimeException("未授权的访问");
         }

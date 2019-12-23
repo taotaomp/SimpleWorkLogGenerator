@@ -5,6 +5,7 @@ import cn.PApudding.SimpleWorkLogGenerator.pojo.WorkActionType;
 import cn.PApudding.SimpleWorkLogGenerator.pojo.WorkType;
 import cn.PApudding.SimpleWorkLogGenerator.pojo.WorkUnit;
 import cn.PApudding.SimpleWorkLogGenerator.service.WorkLogSelectsService;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -133,7 +134,7 @@ public class WorkLogSelectsController {
      * @return
      */
     @RequestMapping(value = "/workType/{workTypeId}",method = RequestMethod.DELETE)
-    boolean deleteWorkType(@PathVariable String workTypeId){
+    Object deleteWorkType(@PathVariable String workTypeId){
         try{
             return workLogSelectsService.deleteWorkType(workTypeId);
         }catch (Exception e){
